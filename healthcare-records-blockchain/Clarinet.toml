@@ -6,6 +6,10 @@ telemetry = false
 
 [contracts.healthcare-records]
 path = "contracts/healthcare-records.clar"
+depends_on = ["healthcare-audit"]
+
+[contracts.healthcare-audit]
+path = "contracts/healthcare-audit.clar"
 depends_on = []
 
 [repl]
@@ -16,7 +20,7 @@ parser_version = 2
 passes = ["check_checker"]
 
 [repl.analysis.check_checker]
-strict = false
+strict = true
 trusted_sender = false
 trusted_caller = false
-callee_filter = false
+callee_filter = true
